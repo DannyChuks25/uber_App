@@ -118,7 +118,7 @@ document.getElementById("dropout").addEventListener("keyup",() => {
     }
     else if(dropout.length < 2){
         dropoutFeedback.textContent = "Location must be at least two characters long";
-        dropoutFeedback.style.color = "rgb(7, 252, 7)";
+        dropoutFeedback.style.color = "rgb(253, 5, 5)";
     }
     else if(!dropoutLocationFormat.test(dropout)){
         dropoutFeedback.textContent = "Enter a valid location!";
