@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("./images/istockphoto-2.jpg");
+    background-size: cover;
+    
+    /* border-image: linear-gradient(hsl(240 100% 50% / .3),
+                                    hsl(0 100% 50% / .3)
+    ) fill 1; */
+    border-image: linear-gradient(hsla(240, 2%, 12%, 0.3),
+                                    hsla(0, 1%, 61%, 0.3)
+    ) fill 1;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+form{
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+    color: rgb(252, 57, 57);
+    display: block;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+}
+form div span{
+    height: 20px;
+    margin-top: -10px;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form button[type="submit"]{
+    margin-top: 30px;
+    cursor: pointer;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(77, 44, 5);
+    color: #fff;
+}
+form button[type="submit"] i{
+    margin-left: 10px;
+}
+form button[type="submit"]:hover{
+    background-color: rgb(129, 76, 11);
+}
+h1{
+    font-weight: bold;
+}
+h3{
+    padding: 10px 0;
+}
+form, .paroo{
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+form div input[type="text"]{
+    height: 50px;
+    padding: 0 12px;
+    width: 100%;
+    font-size: 16px;
+    color: rgb(77, 44, 5);
+    border-radius: 20px;
+    border: 1px solid rgb(122, 75, 12);
+}
+form div input[type="text"]:focus{
+    outline: none;
+    border: 2px solid rgb(92, 54, 6);
+}
+#paroo{
+    margin: auto;
+    display: none;
+    width: 370px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(255,255,255,0.9);
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#paroo p{
+    line-height: 30px;
+}
+#paroo .buttons{
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+}
+#timer .buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+#timer .buttons button{
+    display: flex;
+    gap: 40px;
+}
+#timer-display span, #timer-display{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+#paroo .buttons button, #timer .buttons button{
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(77, 44, 5);
+}
+#timer p{
+    margin-top: 10px;
+    line-height: 20px;
+}
+ #timer .buttons #continue{
+    display: none;
+}
+ #timer .buttons #pause{
+    padding: 10px 28px;
+ }
+
+#paroo .buttons button:hover, #timer .buttons button:hover{
+    background-color: rgb(129, 76, 11);
+    color: #fff;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+#timer{
+    position: absolute;
+    display: none;
+    width: 370px;
+    height: 230px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(255,255,255,0.9);
+    
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#receipt{
+    display: none;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    max-width: 350px;
+    width: 100%;
+    height: 510px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+#receipt .arrow{
+    margin-top: -8px;
+    padding: 4px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+#receipt .arrow i{
+    cursor: pointer;
+    color: rgb(77, 44, 5);
+}
+#receipt .arrow i:hover{
+    color: rgb(129, 76, 11);
+}
+#receipt .success{
+    height: 150px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding-top: 30px;
+    background-color: rgb(77, 44, 5);
+}
+#receipt .success h2{
+    color: #fff;
+}
+#receipt .success i{
+    margin-top: 20px;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    color: rgb(8, 243, 8);
+    border: 3px solid rgb(8, 243, 8);
+}
+#receipt .payment{
+    margin-top: 20px;
+}
+#receipt .payment h3{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+#receipt .payment div{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+#receipt .payment .over{
+    /* border-bottom: 2px solid rgb(77, 44, 5); */
+}
+#receipt .payment #over{
+    background-color: rgb(77, 44, 5);
+    height: 4px;
+    border-radius: 10px;
+}
+#receipt .payment .pay{
+    display: flex;
+    margin-top: 20px;
+}
+#receipt .payment #pay{
+    display: inline-block;
+    border: none;
+    margin: auto;
+    padding: 10px 20px; 
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(77, 44, 5);
+    color: #fff;
+}
+#receipt .payment #pay:hover{
+    background-color: rgb(129, 76, 11);
+}
+
+@media screen and (min-width:786px) {
+    form div input[type="text"]{
+        font-size: 18px;
+    }
+    form h1{
+        font-size: 34px;
+    }
+    form h3{
+        font-size: 22px;
+    }
+    .paroo p{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:400px) {
+    .receipt .success h2{
+        font-size: 12px;
+    }
+    body{
+        padding: 0 30px;
+    }
+    .receipt{
+        margin: 30px 0;
+    }
+}

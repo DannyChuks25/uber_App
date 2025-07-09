@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>LANDING PAGE</title>
+</head>
+<body>
+    
+    <form id="uberForm">
+        <h1>Uber</h1>
+        <h3>Book a ride now</h3>
+        <div>
+            <input type="text" id="pickup" placeholder="Pickup Location">
+            <span id="pickupFeedback"></span>
+            <input type="text" id="dropout" placeholder="Dropdout Location">
+            <span id="dropoutFeedback"></span>
+            
+            <button type="submit">
+                <span>Book Ride</span>
+                <i class="fa fa-book" aria-hidden="true"></i>
+            </button>
+        </div>
+    </form>
+
+    <div class="overlay"></div>
+    <div id="paroo">
+        <p id="message"></p>
+        <p class="text-xl">Please Confirm your ride</p>
+        <div class="buttons">
+            <button id="cancel">
+                <span>Cancel</span>
+                <i class="fa fa-ban" aria-hidden="true"></i>
+            </button>
+            <button id="start">
+                <span>Start Ride</span>
+                <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="timer">
+        <div id="timer-display">
+            <span id="hr">00</span> :
+            <span id="min">00</span> :
+            <span id="sec">00</span>
+        </div>
+        <p>Ride in progress....</p>
+        <p id="message2"></p>
+        <div class="buttons">
+            <button id="pause">
+                <span>Pause</span>
+                <i class="fa fa-pause"></i>
+            </button>
+            <button id="continue">
+                <span>Continue</span>
+                <i class="fa fa-hourglass-start"></i>
+            </button>
+            <button id="stop">
+                <span>Stop Ride</span>
+                <i class="fa fa-stop"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div id="receipt">
+        <div class="arrow">
+            <i id="back" class="fa fa-arrow-left"></i>
+        </div>
+        <div class="success">
+            <h2>Ride has ended</h2>
+            <i class="fa fa-check"></i>
+        </div>
+        <div class="trip">
+
+        </div>
+        <div class="payment">
+            <h3>Payment</h3>
+             <div>
+                <h4></h4>
+                <span id="amt">Amount(&#8358;)</span>
+            </div>
+            <div>
+                <h4>Base Fare</h4>
+                <span id="base-fare">1000</span>
+            </div>
+            <div>
+                <h4>Time Fare</h4>
+                <span id="time-fare"></span>
+            </div>
+            <div>
+                <h4>Initial Total</h4>
+                <span id="initial-total"></span>
+            </div>
+            <div>
+                <h4>Tax</h4>
+                <span id="tax"></span>
+            </div>
+            <hr id="over">
+            <div>
+                <h4>Total Amount</h4>
+                <span id="total-amount"></span>
+            </div>
+            <div class="pay">
+                <button id="pay">Make Payment</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
