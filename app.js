@@ -82,8 +82,9 @@ uberForm.addEventListener("submit", (e) => {
 });
 
 // Form Validation
-let pickupLocationFormat = /^[A-Za-z]+$/;
-let dropoutLocationFormat = /^[A-Za-z]+$/;
+let pickupLocationFormat = /^[A-Za-z\s'-,]{2,}$/;
+// let pickupLocationFormat = /^([A-Za-z]+[-,][A-Za-z]+)*)(\s+([A-Za-z]+([-,][A-Za-z]+)*)){0,2}$/;
+let dropoutLocationFormat = /^[A-Za-z\s'-,]{2,}$/;
 let dropoutFeedback = document.getElementById("dropoutFeedback");
 let pickupFeedback = document.getElementById("pickupFeedback");
 document.getElementById("pickup").addEventListener("keyup",() => {
@@ -100,7 +101,7 @@ document.getElementById("pickup").addEventListener("keyup",() => {
     }
     // console.log(pickup.length);
     else if(!pickupLocationFormat.test(pickup)){
-        pickupFeedback.textContent = "Location is Valid";
+        pickupFeedback.textContent = "Location is inValid";
         pickupFeedback.style.color = "rgb(253, 5, 5)";
     }
     else{
@@ -137,6 +138,30 @@ cancel.onclick = function(){
     document.querySelector(".overlay").style.display = "none";
 }
 
+function getTime(){
+    let pickupPlace = document.getElementById("pickupPlace");
+    let dropoutPlace = document.getElementById("dropoutPlace");
+    let pickupTime = document.getElementById("pickupTime");
+    let dropoutTime = document.getElementById("dropoutTime");
+
+    let hr = new Date().getHours();
+    let min = new Date().getMinutes();
+    let session = "am";
+    if(hr>12){
+        hr -= 12;
+        session="pm";
+    }
+    min = (min < 10) ? "0" + min : min;
+    // console.log(`${hr}:${min}${session}`);
+
+    pickupPlace.textContent = pickup;
+    dropoutPlace.textContent = dropout;
+
+    return {hr, min, session};
+    // pickupTime.textContent = `${hr}:${min}${session}`;
+    // dropoutTime.textContent = `${hr}:${min}${session}`;
+}
+
 start.onclick = function(){
     paroo.style.display = "none";
     document.querySelector(".overlay").style.display = "block";
@@ -146,6 +171,10 @@ start.onclick = function(){
 
     clearInterval(interval);
     interval = setInterval(startTimer, 1000);
+
+    const {hr, min, session} = getTime();
+    console.log(`${hr}:${min}${session}`);
+    pickupTime.textContent = `${hr}:${min}${session}`;
     
 }
 
@@ -214,6 +243,11 @@ stopBtn.onclick = function(){
     // console.log(yourInitialTotal + yourTax);
 
     receipt.style.display = "block";
+
+    const {hr, min, session} = getTime();
+    console.log(`${hr}:${min}${session}`);
+    dropoutTime.textContent = `${hr}:${min}${session}`;
+
     initialTotal.innerHTML = parseFloat(yourInitialTotal).toFixed(2);
     timeFare.innerHTML = parseFloat(yourTimeFare).toFixed(2);
     tax.innerHTML = parseFloat(yourTax).toFixed(2);
@@ -224,5 +258,12 @@ back.onclick = function(){
     receipt.style.display = "none";
     uberForm.style.display = "block";
 }
+
+
+
+
+
+
+
 
 

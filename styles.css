@@ -28,7 +28,7 @@ form{
     max-width: 400px;
     width: 100%;
     color: rgb(252, 57, 57);
-    display: block;
+    display: blockg ;
     color: #fff;
     background: rgba(0, 0, 0, 0.3);
 }
@@ -174,9 +174,25 @@ form div input[type="text"]:focus{
     background-color: #fff;
     max-width: 350px;
     width: 100%;
-    height: 510px;
+    height: 540px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
 }
+.trip{
+    margin-top: 14px;
+}
+.trip .tripContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.trip .tripContent div{
+    margin: 0 0 7px 0;
+}
+.trip .tripContent p{
+    font-size: 13px;
+    text-align: right;
+}
+
 #receipt .arrow{
     margin-top: -8px;
     padding: 4px 0;
@@ -209,15 +225,16 @@ form div input[type="text"]:focus{
     color: rgb(8, 243, 8);
     border: 3px solid rgb(8, 243, 8);
 }
+
 #receipt .payment{
     margin-top: 20px;
 }
-#receipt .payment h3{
+#receipt .payment #payment, .trip #urtrip{
     text-decoration: underline;
     text-decoration-thickness: 3px;
 }
 #receipt .payment div{
-    margin: 10px 0;
+    margin: 7px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -242,6 +259,9 @@ form div input[type="text"]:focus{
     cursor: pointer;
     background: rgb(77, 44, 5);
     color: #fff;
+}
+#receipt .payment #amount{
+    margin-top: -20px;
 }
 #receipt .payment #pay:hover{
     background-color: rgb(129, 76, 11);
