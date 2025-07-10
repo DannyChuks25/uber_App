@@ -28,7 +28,7 @@ form{
     max-width: 400px;
     width: 100%;
     color: rgb(252, 57, 57);
-    display: blockg ;
+    display: block;
     color: #fff;
     background: rgba(0, 0, 0, 0.3);
 }
@@ -174,7 +174,7 @@ form div input[type="text"]:focus{
     background-color: #fff;
     max-width: 350px;
     width: 100%;
-    height: 540px;
+    height: 570px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
 }
 .trip{

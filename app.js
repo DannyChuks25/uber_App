@@ -9,6 +9,7 @@ let cancel = document.getElementById("cancel");
 let start = document.getElementById("start");
 let receipt = document.getElementById("receipt");
 let back = document.getElementById("back");
+let timeSpent = document.getElementById("timeSpent");
 
 let stopBtn = document.getElementById("stop");
 let contdBtn = document.getElementById("continue");
@@ -216,7 +217,7 @@ contdBtn.onclick = function(){
 
 stopBtn.onclick = function(){
     clearInterval(interval);
-    savedTime = `${hours}:${minutes}:${seconds}`;
+    savedTime = `${hours}hrs:${minutes}min:${seconds}sec`;
     savedTime = String(savedTime);
     // console.log(savedTime);
 
@@ -247,6 +248,7 @@ stopBtn.onclick = function(){
     const {hr, min, session} = getTime();
     console.log(`${hr}:${min}${session}`);
     dropoutTime.textContent = `${hr}:${min}${session}`;
+    timeSpent.textContent = savedTime;
 
     initialTotal.innerHTML = parseFloat(yourInitialTotal).toFixed(2);
     timeFare.innerHTML = parseFloat(yourTimeFare).toFixed(2);
